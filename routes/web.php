@@ -4,6 +4,7 @@ use App\Http\Controllers\EspecialidadeController;
 use App\Http\Controllers\ExameController;
 use App\Http\Controllers\Padministrativo;
 use App\Http\Controllers\PclinicoController;
+use App\Http\Controllers\UtenteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,4 @@ Route::get('/dashboard/padministrativo', [Padministrativo::class,'index']);
 Route::get('/dashboard/pclinico', [PclinicoController::class,'index']);
 Route::get('/dashboard/exames', [ExameController::class,'index']);
 Route::get('/dashboard/especialidade', [EspecialidadeController::class,'index']);
+Route::get('/dashboard/utentes', [UtenteController::class,'index']);

@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title', 'Pessoal Clínico')
+@section('title', 'Gerir Utentes')
 
 
 @section('content')
@@ -39,7 +39,7 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class="overview-wrap">
-                    <h2 class="title-1">Pessoal Clínico</h2>
+                    <h2 class="title-1">Utentes</h2>
                     <button class="au-btn au-btn-icon au-btn--blue" data-toggle="modal" data-target="#registarusuarioModal" >
                         <i class="zmdi zmdi-plus"></i>Registar</button>
                 </div>
@@ -52,9 +52,12 @@
                 <tr>
                         <th>Id</th>
                         <th>Nome</th>
-                        <th>Especialidade</th>
+                        <th>Morada</th>
                         <th>Telefone</th>
                         <th>Email</th>
+                        <th>Codigo Postal</th>
+                        <th>Sexo</th>
+                        <th>Entidade financeira</th>
                         <th>Acções</th>
                     </tr>
                 
@@ -76,6 +79,10 @@
                     <td>aaaaa</td>
                     <td>aaaa</td>
                     <td>aaaaa</td>
+                    <td>aaaa</td>
+                    <td>aaaaa</td>
+                    <td>aaaa</td>
+                    
                   
                     
                     <td> 
@@ -100,12 +107,12 @@
 
 
 
-<!-- modal registar Pessoal Administrativo -->
+<!-- modal registar utente-->
 <div class="modal fade" id="registarusuarioModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">Registar Pessoal Clínico</h5>
+                <h5 class="modal-title" id="mediumModalLabel">Registar Utente</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -147,21 +154,38 @@
                                         </div>
 
                                         <div class="col-6">
+                                            <label for="telefone" class="control-label mb-1">Morada</label>
+                                            <div class="input-group">
+                                                <input id="telefone" name="telefone" type="text" class="form-control"  required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        
+                                        <div class="col-6">
+                                            <label for="morada" class="control-label mb-1">Entidade financeira</label>
+                                            <div class="input-group">
+                                                <input id="morada" name="morada" type="text" class="form-control"  required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
                                             <div class="row form-group">
                                                 <div class="col col-md-12">
-                                                    <label for="select" class=" form-control-label">Perfil</label>
+                                                    <label for="select" class=" form-control-label">Sexo</label>
                                                 </div>
                                                 <div class="col-12 col-md-12">
                                                     <select name="permission" id="select" class="form-control">
                                                         <option selected="selected">Selecione</option>
                                                         <!-- Dados que vem da BD -->
-                                                        <option value=""></option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Feminino</option>
                                                      
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
 
                                     <div class="row mp-3">
@@ -252,7 +276,7 @@
     
     $(document).ready(function(){
         //codigo para inicializar a data table
-       var table=$('#datatable').DataTable();
+     //  var table=$('#datatable').DataTable();
      
             
         });

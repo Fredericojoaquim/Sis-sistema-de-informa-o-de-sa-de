@@ -240,7 +240,7 @@
                                 <i class="fas fa-desktop"></i>Utentes</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="">Ver Todos</a>
+                                    <a href="{{url('/dashboard/utentes')}}">Ver Todos</a>
                                  
  
                             </ul>
