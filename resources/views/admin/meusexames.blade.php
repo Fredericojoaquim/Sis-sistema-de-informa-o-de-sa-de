@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title', 'Gerir Utentes')
+@section('title', 'Meus Exames')
 
 
 @section('content')
@@ -39,9 +39,9 @@
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class="overview-wrap">
-                    <h2 class="title-1">Utentes</h2>
+                    <h2 class="title-1">Meus Exames</h2>
                     <button class="au-btn au-btn-icon au-btn--blue" data-toggle="modal" data-target="#registarusuarioModal" >
-                        <i class="zmdi zmdi-plus"></i>Registar</button>
+                        <i class="zmdi zmdi-plus"></i>Marcar Exame</button>
                 </div>
             </div>
         </div>
@@ -51,13 +51,11 @@
            
                 <tr>
                         <th>Id</th>
-                        <th>Nome</th>
-                        <th>Morada</th>
-                        <th>Telefone</th>
-                        <th>Email</th>
-                        <th>Codigo Postal</th>
-                        <th>Sexo</th>
-                        <th>Entidade financeira</th>
+                        <th>descrição exame</th>
+                        <th>Medico</th>
+                        <th>Data</th>
+                        <th>Resultado</th>
+                        <th>Estado</th>
                         <th>Acções</th>
                     </tr>
                 
@@ -80,8 +78,8 @@
                     <td>aaaa</td>
                     <td>aaaaa</td>
                     <td>aaaa</td>
-                    <td>aaaaa</td>
-                    <td>aaaa</td>
+        
+                   
                     
                   
                     
@@ -93,10 +91,6 @@
                         <button class="btn btn-md btn btn-danger eliminar" id=""  data-toggle="modal"   data-target="#smallmodal">
                             <ion-icon name="trash-outline"></ion-icon> Eliminar
                          </button>
-
-                         <button class="mb-2 btn btn-md btn-outline-primary editar" id="">
-                         <ion-icon name="trash-outline"></ion-icon> RCU
-                        </button>
                     </td>
                    
 
@@ -111,12 +105,12 @@
 
 
 
-<!-- modal registar utente-->
+<!-- modal registar marcação de exame-->
 <div class="modal fade" id="registarusuarioModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">Registar Utente</h5>
+                <h5 class="modal-title" id="mediumModalLabel">Marcação de Exame</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,90 +124,41 @@
                                     @csrf
 
                                     <div class="row">
-                                        
-                                        <div class="col-6">
-                                            <label for="nome" class="control-label mb-1">Nome</label>
-                                            <div class="input-group">
-                                                <input id="nome2" name="nome" type="text" class="form-control"  required>
-                                                <small class="vermelho"  id="erro-nome"></small>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <label for="nif" class="control-label mb-1">Email</label>
-                                            <div class="input-group">
-                                                <input id="nif" name="nif" type="text" class="form-control"  required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        
-                                        <div class="col-6">
-                                            <label for="morada" class="control-label mb-1">Telefone</label>
-                                            <div class="input-group">
-                                                <input id="morada" name="morada" type="text" class="form-control"  required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6">
-                                            <label for="telefone" class="control-label mb-1">Morada</label>
-                                            <div class="input-group">
-                                                <input id="telefone" name="telefone" type="text" class="form-control"  required>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        
-                                        <div class="col-6">
-                                            <label for="morada" class="control-label mb-1">Entidade financeira</label>
-                                            <div class="input-group">
-                                                <input id="morada" name="morada" type="text" class="form-control"  required>
-                                            </div>
-                                        </div>
 
                                         <div class="col-6">
                                             <div class="row form-group">
                                                 <div class="col col-md-12">
-                                                    <label for="select" class=" form-control-label">Sexo</label>
+                                                    <label for="select" class=" form-control-label">Especialidade</label>
                                                 </div>
                                                 <div class="col-12 col-md-12">
                                                     <select name="permission" id="select" class="form-control">
-                                                        <option selected="selected">Selecione</option>
+                                                        <option selected="selected">Especialidade do Exame</option>
                                                         <!-- Dados que vem da BD -->
-                                                        <option value="M">Masculino</option>
-                                                        <option value="F">Feminino</option>
+                                                        <option value=""></option>
                                                      
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="row mp-3">
                                         
                                         <div class="col-6">
-                                            <label for="email" class="control-label mb-1">Senha</label>
-                                            <div class="input-group">
-                                                <input id=email" name="password" type="password" class="form-control"  required>
+                                            <div class="row form-group">
+                                                <div class="col col-md-12">
+                                                    <label for="select" class=" form-control-label">Médico</label>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <select name="permission" id="select" class="form-control">
+                                                        <option selected="selected">Selecione o seu Médico</option>
+                                                        <!-- Dados que vem da BD -->
+                                                        <option value=""></option>
+                                                     
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
 
-
-                                        <div class="col-6">
-                                            <label for="email" class="control-label mb-1">Confirmar Senha</label>
-                                            <div class="input-group">
-                                                <input id=email" name="password" type="password" class="form-control"  required>
-                                            </div>
-                                        </div>
-
-                                        
-
                                         
                                     </div>
-
                                     
                                     <div class="text-right mt-3">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

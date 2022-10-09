@@ -271,7 +271,7 @@
                                 <i class="fas fa-copy"></i>Meus exames</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{url('/dashboard/exames')}}">Ver Todos</a>
+                                    <a href="{{url('/dashboard/meusexames')}}">Ver Todos</a>
                                 </li>
                             </ul>
                         </li>
